@@ -4,7 +4,6 @@ var app = express()
 var MongoClient = require('mongodb').MongoClient
 var ObjectID = require('mongodb').ObjectID
 var Numeral = require('numeral')
-var assert = require('assert')
 
 var db
 
@@ -12,7 +11,8 @@ app.use(bodyParser.urlencoded({extended: true}))
 
 // get list data
 app.get('/h',(req,res)=>{
-	db.collection('tours').find().toArray(function(err,results){
+	db.collection('tours').find().toArray(
+	function(err,results){
 		res.send(results)
 	})
 })
@@ -71,7 +71,7 @@ function(req, res) {
       db.collection('tours').findOne(
 						{_id: id},
 						function(error, result){
-			               assert.equal(null,error);
+			               //assert.equal(null,error);
 										 if (!result) {
 										 	res.send(`
 												<h2>no result!</h2>
