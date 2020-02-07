@@ -25,7 +25,7 @@ copy and insert to software!
 software is just for fun!
 
 ## 3rd 
-download [tours.json]() 
+download [tours.json](https://drive.google.com/open?id=1wVo-7muEKBW3bjggYmfI0A679n7FWyjL) 
 and import it to mongo by :
 ```
 mongoimport --db learning_mongo --collection tours --jsonArray --file tours.json
