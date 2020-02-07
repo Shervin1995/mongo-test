@@ -4,8 +4,11 @@
 ## 1st step
 downlaod mng software and install it!
 
+[test video](https://archive.org/details/mongoExpressGithub)
+
+
 add it to windowsPowerShell! 
-need help? download [mng-latex.pdf]()!
+need help? download [mng-latex.pdf](https://drive.google.com/open?id=1K3UoxmTdD94j0vSgvhIheyPiONalH8of)!
 
 ## 2nd 
 ```
