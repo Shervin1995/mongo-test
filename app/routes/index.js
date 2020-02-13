@@ -39,7 +39,10 @@ router.get('/',(req,res)=>{
           <br>
 
 					` }
-			res.send(x)
+			res.send(x + `
+        <script src="/js/jqueryajax.js"></script>
+        <script src="/js/insertAjax.js"></script>
+        `)
 	}
 )
 })
