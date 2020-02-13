@@ -1,8 +1,8 @@
 import React,{Component} from 'react'
 import {render} from 'react-dom'
 import {Link,Switch,BrowserRouter,Route} from 'react-router-dom'
-import {App1} from './components/fn1.js'
-import {About} from './components/about.js'
+import {App1} from './fn1.js'
+import {About} from './about.js'
 
 window.React = React
 
@@ -18,8 +18,7 @@ render(
   <BrowserRouter>
   <Switch>
   <Route exact path="/" component={Menu}/>
-  <Route exact path="/table" component={App1} />
-  <Route exact path="/table/:x" component={App1} />
+  <Route exact path="/table" component={App1} /> 
   <Route exact path="/about" component={About} />
   </Switch>
   </BrowserRouter>
