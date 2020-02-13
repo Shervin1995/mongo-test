@@ -29,7 +29,7 @@ router.post('/api',(req,res)=>{
 		if(err) return console.log(err);
 
 		// console.log('saved to db!!');
-		// res.redirect('/')
+		res.redirect('/')
 	})
 })
 
