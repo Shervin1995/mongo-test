@@ -61,10 +61,10 @@ export class App1 extends Component{
     <h1 style='color:purple'>Insert!</h1>
       <form id='insertform' method="post">
       tourPrice:<br/>
-     <input id='tourPrice' type="text" name="tourPrice"><br>
+     <input id='tourPrice' type="text" name="tourPrice"/><br/>
       tourDescription:<br/>
       <input id='tourDescription' type="text" name="tourDescription"/>
-      <br/><br/>
+      <br/> <br/>
         <input type="submit" value="insert"/>
       </form>
       <hr/>
@@ -73,6 +73,7 @@ export class App1 extends Component{
       <div class='showlist'>
 
       </div>
+      
       </div>
 
   )}}
