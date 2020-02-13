@@ -20,8 +20,6 @@ export class App1 extends Component{
 
     </div>
 
-
-
       </div>
 
   )}}
