@@ -1,8 +1,8 @@
 import React,{Component} from 'react'
 import {render} from 'react-dom'
 import {Link,Switch,BrowserRouter,Route} from 'react-router-dom'
-import {App1} from './app1.js'
-import {About} from './about.js'
+import {App1} from './app1.jsx'
+import {About} from './about.jsx'
 
 window.React = React
 
@@ -10,7 +10,10 @@ const Menu = () =>
 <div>
 <h1>Menu</h1>
 <Link to='/about'>about</Link><br/>
-<Link to='/table'>table</Link><br/>
+{/* i use <a/> instead <Link/> because it contains dynamic content
+i used express route instead react-router to load data
+at 1st time window opened! */}
+<a href='http://localhost:8080/table'>table</a><br/>
 </div>
 
 

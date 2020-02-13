@@ -2,7 +2,7 @@ var webpack = require("webpack");
 
 module.exports = {
 		mode: "production",
-		entry: "/Users/shervin/Desktop/mongo-test/app",
+		entry: "/Users/shervin/Desktop/mongo-test/app/index.jsx",
 		output: {
 			path:"/Users/shervin/Desktop/mongo-test/server/public/react",
 			filename: "bundle.js",
@@ -19,7 +19,7 @@ module.exports = {
 module: {
   rules: [
     {
-      test: /\.m?js$/,
+      test: /\.m?jsx$/,
       exclude: /(node_modules|bower_components)/,
       use: {
         loader: 'babel-loader',
