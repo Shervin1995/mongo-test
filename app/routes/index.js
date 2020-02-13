@@ -29,9 +29,8 @@ router.get('/',(req,res)=>{
 					x += `
 					<div>
 					<h1 style='color:gray'>NO.${i}</h1>
-          <form action="/api/${results[i]._id}" method="post">
-          <input style='background-color:red' type="submit" value="Delete!">
-          </form>
+          <button style='background-color:red' class='delButton'
+          id='${results[i]._id}'>Delete</button>
           <p>_id (mongodb): ${results[i]._id}</p>
           <p>tourPrice: ${results[i].tourPrice}</p>
           <p>Description: </p>

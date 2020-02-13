@@ -14,7 +14,12 @@ router.post('/api/:id1',(req,res)=>{
 	let id =  ObjectID(req.params.id1)
 	db.collection('tours').deleteOne(
 		{_id: id},
-		(err,result)=>{ res.redirect(`/`) }
+		(err,result)=>{
+      if (err) {
+        console.log(err);
+      }
+      // res.redirect(`/`)
+    }
 	)
 })
 
