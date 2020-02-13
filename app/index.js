@@ -2,10 +2,10 @@ import React,{Component} from 'react'
 import {render} from 'react-dom'
 import {Link,Switch,BrowserRouter,Route} from 'react-router-dom'
 import {App1} from './components/fn1.js'
+import {About} from './components/about.js'
 
 window.React = React
 
-const About = () => <h1>About</h1>
 const Menu = () =>
 <div>
 <h1>Menu</h1>
