@@ -10,6 +10,8 @@ MongoClient.connect('mongodb://localhost:27017/',
     db = client.db('learning_mongo')
 })
 
+
+app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(express.static('app/public'))
 
