@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({extended: true}))
 app.use(express.static('server/public'))
 
 app.use(require('./routes/index'))
-// app.use(require('./routes/api'))
+app.use(require('./routes/api'))
 
 app.listen(8080,function() {
     console.log('Express listening to http://localhost:8080')
