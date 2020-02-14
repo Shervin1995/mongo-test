@@ -13,7 +13,7 @@ MongoClient.connect('mongodb://localhost:27017/',
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
-app.use(express.static('app/public'))
+app.use(express.static('server/public'))
 
 app.use(require('./routes/index'))
 app.use(require('./routes/api'))
