@@ -2,9 +2,9 @@
   "name": "mongo-express",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app/app.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "nodemon -e css,js,ejs,json --watch app"
   },
   "author": "",
   "license": "ISC",
