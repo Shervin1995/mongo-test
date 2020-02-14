@@ -8,7 +8,7 @@ window.React = React
 
 const Menu = () =>
 <div>
-<h1>Menu</h1>
+<h1 style={{color: 'green'}}>Menu</h1>
 <Link to='/about'>about</Link><br/>
 {/* i use <a/> instead <Link/> because it contains dynamic content
 i used express route instead react-router to load data
