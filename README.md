@@ -1,11 +1,6 @@
-# clean code
+# ajax
 98.11.24
 
-```
-mongo
-npm start
+update list without refresh browser!
 
-browser 8080
-```
-
-[watch final video](https://archive.org/details/repomngtestbranchcleancode981124)
+[watch final video](https://archive.org/details/mongoajax981124)

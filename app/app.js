@@ -10,8 +10,10 @@ MongoClient.connect('mongodb://localhost:27017/',
     db = client.db('learning_mongo')
 })
 
-app.use(bodyParser.urlencoded({extended: true}))
 
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({extended: true}))
+app.use(express.static('app/public'))
 
 app.use(require('./routes/index'))
 app.use(require('./routes/api'))
