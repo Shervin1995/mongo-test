@@ -12,28 +12,32 @@ MongoClient.connect('mongodb://localhost:27017/',
 router.get('/',(req,res)=>{
 	db.collection('tours').find().toArray(function(err,results){
 			var x = `
-			<h2>Search in database!</h2>
-			<form action="/postsearch" method="post">
-			Tour Description:<br>
-		 <input type="text" name="tourDescription">
-			<br><br>
-				<input type="submit" value="search!">
-			</form>
-
-			<h2>List of ids:</h2>
-			<a style="background-color: gold;color: red; text-decoration: none; font-size:20px;
-			border: solid 1px red; padding: 5px"
-					href="/insert">Add one to list!</a>
-
-			<hr>
+      <h1 style='color:purple'>Insert!</h1>
+      <form id='insertform' action="/api" method="post">
+      tourPrice:<br>
+     <input id='tourPrice' type="text" name="tourPrice"><br>
+      tourDescription:<br>
+      <input id='tourDescription' type="text" name="tourDescription">
+      <br><br>
+        <input type="submit" value="insert">
+      </form>
+      <hr>
+			<h1 style='color:purple'>Show!</h1>
 			`
 			var length = Numeral(results.length)
 				for(let i=0; i<length.value(); i++){
 					x += `
 					<div>
-					<h3>product number ${i}:</h3><br>
-					<a href="/h/${results[i]._id}">more info</a>
-					</div><hr>
+					<h1 style='color:gray'>NO.${i}</h1>
+          <form action="/api/${results[i]._id}" method="post">
+          <input style='background-color:red' type="submit" value="Delete!">
+          </form>
+          <p>_id (mongodb): ${results[i]._id}</p>
+          <p>tourPrice: ${results[i].tourPrice}</p>
+          <p>Description: </p>
+          <p style='color:lightgray'>${results[i].tourDescription}</p>
+          <br>
+
 					` }
 			res.send(x)
 	}
