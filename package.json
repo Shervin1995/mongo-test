@@ -2,25 +2,17 @@
   "name": "mongo-express",
   "version": "1.0.0",
   "description": "",
-  "main": "server/app.js",
+  "main": "index.js",
   "scripts": {
-    "start": "nodemon -e css,js,ejs,json,html --watch server"
+    "start": "nodemon index.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@babel/core": "^7.8.4",
-    "@babel/preset-env": "^7.8.4",
-    "@babel/preset-react": "^7.8.3",
-    "babel-loader": "^8.0.6",
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "mongodb": "^3.5.2",
     "nodemon": "^2.0.2",
-    "numeral": "^2.0.6",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "react-router-dom": "^5.1.2",
-    "webpack": "^4.41.6"
+    "numeral": "^2.0.6"
   }
 }
