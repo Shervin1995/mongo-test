@@ -1,12 +1,10 @@
 import React,{Component} from 'react'
+
 // App1
-export class App1 extends Component{
+export class App extends Component{
 fn23(){
   location.reload()
-  {/* now input fields clear after each submit
-    i could also use a cleaner instead location.reload */}
 }
-
   render(){
       return(
 	  <div>
