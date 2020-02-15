@@ -1,9 +1,9 @@
 import React,{Component} from 'react'
 import {render} from 'react-dom'
 import {Link,Switch,BrowserRouter,Route} from 'react-router-dom'
-import {App} from './app.jsx'
-import {About} from './about.jsx'
-import {Err} from './err404'
+import {App} from './component/app.jsx'
+import {About} from './component/about.jsx'
+import {Err} from './component/err404.jsx'
 
 window.React = React
 
@@ -21,7 +21,7 @@ render(
   <Route exact path="/" component={Menu}/>
   <Route exact path="/table" component={App} />
   <Route exact path="/about" component={About} />
-  <Route exact path="/about" component={Err} />
+  <Route component={Err} />
   </Switch>
   </BrowserRouter>
 ,document.querySelector("#root") )
