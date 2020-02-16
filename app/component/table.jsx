@@ -2,10 +2,11 @@ import React,{Component} from 'react'
 import MaterialTable from 'material-table';
 
 export function Table({list2}) {
+
   const [state, setState] = React.useState({
     columns: [
-      { title: 'tourPrice', field: 'price', type: 'numeric' },
-        { title: 'tourDescription', field: 'description' }
+      { title: 'Price', field: 'tourPrice', type: 'numeric' },
+      { title: 'Description', field: 'tourDescription' }
     ],
     data: list2
   });
