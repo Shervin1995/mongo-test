@@ -7,7 +7,7 @@ export function Table({list2}) {
       { title: 'tourPrice', field: 'price', type: 'numeric' },
         { title: 'tourDescription', field: 'description' }
     ],
-    data:  list2
+    data: list2
   });
 
   return (
