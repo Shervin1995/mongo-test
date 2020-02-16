@@ -1,22 +1,17 @@
 import React,{Component,useState,useEffect} from 'react'
-import MaterialTable from 'material-table';
-
-export function Table1({list2}){
-  return list2.map(x => <div> {x.tourPrice}<br/>{x.tourDescription} </div>)
-}
+import MaterialTable from 'material-table'
 
 export function Table() {
-  const [state, setState] = useState({
-    columns: [
-      { title: 'Price', field: 'tourPrice', type: 'numeric' },
-      { title: 'Description', field: 'tourDescription' }
-    ],
-    data: []
-  });
+  const [state, setState] = useState({ })
 
-   async function fetchData() {
-    const data = await fetch("/api")
-    data => data.json().then(data => setState({data}))
+   function fetchData() {
+    fetch("/api").then(x => x.json()).then(data => setState({
+      columns: [
+        { title: 'Age', field: 'age', type: 'numeric' },
+        { title: 'Name', field: 'name' }
+      ],
+      data: data
+    }))
   }
 
     useEffect( () => {fetchData()},[] )

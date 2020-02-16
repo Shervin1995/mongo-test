@@ -5,13 +5,13 @@ var MongoClient = require('mongodb').MongoClient
 var db
 MongoClient.connect('mongodb://localhost:27017/',
   function(err,client){
-    db = client.db('learning_mongo')
+    db = client.db('db01')
 })
 
 
 // get
 router.get( '/api' , function(req,res){
-  db.collection('tours').find().toArray(function(err,results){
+  db.collection('coll01').find().toArray(function(err,results){
     res.json(results)
   })
 })
