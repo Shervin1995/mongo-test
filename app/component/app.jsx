@@ -5,27 +5,28 @@ import {Table} from './table.jsx'
 // App1
 export class App extends Component{
   constructor(props){super(props)
-    this.state = { list1:[] }
+    this.state = { list: [{go:'ahead'}] }
   }
 
   componentDidMount(){ this.getList() }
 
-  getList = ()=>{
-    fetch('/api/getList').then(res => res.json() ).then(list => this.setState({ list }))
+  getList() {
+    fetch('/api').then(x => x.json()).then(list1 => console.log(list1))
   }
 
   render(){
-    const {list1} = this.state
+    const {list} = this.state
       return(
     	  <div>
           <h1 >Insert!</h1>
           <Form />
           <hr/>
           <h1>Show!</h1>
-          <Table list={list1} />
-          <div class='showlist'>
 
-          </div>
+          {/*<Table list2={list} />
+           <div class='showlist'>
+
+          </div> */}
         </div>
   )}
 }

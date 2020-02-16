@@ -1,21 +1,13 @@
 import React,{Component} from 'react'
 import MaterialTable from 'material-table';
 
-export function Table(dataArrayJson) {
+export function Table({list2}) {
   const [state, setState] = React.useState({
     columns: [
       { title: 'tourPrice', field: 'price', type: 'numeric' },
         { title: 'tourDescription', field: 'description' }
     ],
-    data: [
-      {
-        price: 20000,
-        description: 'Hello Shervin!!'
-      },{
-        price: 22000,
-        description: 'Hi Shervin!!'
-      }
-    ]
+    data:  list2
   });
 
   return (
