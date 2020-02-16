@@ -1,5 +1,6 @@
 import React,{Component} from 'react'
 import {Form} from './form.jsx'
+import {Table} from './table.jsx'
 
 // App1
 export class App extends Component{
@@ -11,6 +12,7 @@ export class App extends Component{
           <Form />
           <hr/>
           <h1>Show!</h1>
+          <Table />
           <div class='showlist'>
 
           </div>

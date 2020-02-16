@@ -17,6 +17,7 @@
     "body-parser": "^1.19.0",
     "css-loader": "^3.4.2",
     "express": "^4.17.1",
+    "material-table": "^1.57.2",
     "mongodb": "^3.5.2",
     "nodemon": "^2.0.2",
     "numeral": "^2.0.6",
