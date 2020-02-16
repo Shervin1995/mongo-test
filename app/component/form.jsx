@@ -1,21 +1,55 @@
 import React,{Component} from 'react'
+import { makeStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
 
+const useStyles = makeStyles(theme => ({
+  button: {
+    margin: theme.spacing(1),
+  },
+  input: {
+    display: 'none',
+  },
+  container: {
+    display: 'flex',
+    flexDirection: 'column',
+    flexWrap: 'wrap',
+  },
+  textField: {
+    marginLeft: theme.spacing(1),
+    marginRight: theme.spacing(1),
+    width: 200,
+  },
+}));
 
-export class Form extends Component{
+export function Form() {
+  const classes = useStyles();
 
-  fn23(){
-  location.reload()
-  }
+  function fn23(){ location.reload() }
 
-  render(){
-    return(
-      <form onSubmit={this.fn23} id='insertform' >
-      tourPrice:<br/>
-      <input id='tourPrice' type="text" name="tourPrice" /><br/>
-      tourDescription:<br/>
-      <input id='tourDescription' type="text" name="tourDescription"/>
-      <br/> <br/>
-        <input type="submit" value="insert"/>
-      </form>
-    )}
+  return (
+    <form onSubmit={fn23} id='insertform' className={classes.container} noValidate autoComplete="off">
+    <div>
+      <TextField
+        id="tourPrice"
+        className={classes.textField}
+        label="Tour Price"
+        margin="normal"
+      />
+    </div>
+    <div>
+      <TextField
+        id="tourDescription"
+        className={classes.textField}
+        label="Tour Description"
+        margin="normal"
+      />
+    </div>
+    <div style={{marginTop: "30px"}}>
+    <Button type="submit" variant="contained" color="primary" className={classes.button}>
+        Insert
+      </Button>
+    </div>
+    </form>
+  );
 }
