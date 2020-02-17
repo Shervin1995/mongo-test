@@ -28,7 +28,7 @@ export function Table() {
 
   return (
     <MaterialTable
-      title="My 1st muiTable :)"
+      title="My1stmuiTbl"
       columns={state.columns}
       data={state.data}
       editable={{

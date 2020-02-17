@@ -2,7 +2,7 @@ var webpack = require("webpack");
 
 module.exports = {
 		mode: "production",
-		entry: ['babel-polyfill',"/Users/shervin/Desktop/mongo-test/app/index.jsx"],
+		entry: "/Users/shervin/Desktop/mongo-test/app/index.jsx",
 		output: {
 			path:"/Users/shervin/Desktop/mongo-test/server/public/react",
 			filename: "bundle.js",
