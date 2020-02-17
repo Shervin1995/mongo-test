@@ -1,5 +1,6 @@
 import React,{Component,useState,useEffect} from 'react'
 import MaterialTable from 'material-table'
+import Button from '@material-ui/core/Button'
 
 export function Table() {
   const [state, setState] = useState({ })
@@ -19,45 +20,21 @@ export function Table() {
   return (
     <MaterialTable
       title="Let's go to the Mountains!"
+      id="muiTable"
       columns={state.columns}
       data={state.data}
-      editable={{
-        onRowAdd: newData =>
-          new Promise(resolve => {
-            setTimeout(() => {
-              resolve();
-              setState(prevState => {
-                const data = [...prevState.data];
-                data.push(newData);
-                return { ...prevState, data };
-              });
-            }, 600);
-          }),
-        onRowUpdate: (newData, oldData) =>
-          new Promise(resolve => {
-            setTimeout(() => {
-              resolve();
-              if (oldData) {
-                setState(prevState => {
-                  const data = [...prevState.data];
-                  data[data.indexOf(oldData)] = newData;
-                  return { ...prevState, data };
-                });
-              }
-            }, 600);
-          }),
-        onRowDelete: oldData =>
-          new Promise(resolve => {
-            setTimeout(() => {
-              resolve();
-              setState(prevState => {
-                const data = [...prevState.data];
-                data.splice(data.indexOf(oldData), 1);
-                return { ...prevState, data };
-              });
-            }, 600);
-          }),
+      components={{
+        Action: props => (
+          <Button
+            className= 'delbutton'
+            id={dataRow._id}
+            tooltip= 'delete User'
+          >
+            Delete
+          </Button>
+        ),
       }}
+
     />
   );
 }
