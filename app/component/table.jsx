@@ -1,7 +1,5 @@
 import React,{Component,useState,useEffect} from 'react'
 import MaterialTable from 'material-table'
-import Button from '@material-ui/core/Button'
-
 
 export function Table() {
   const [state, setState] = useState({ })
@@ -11,7 +9,7 @@ export function Table() {
     var xhr1 = new XMLHttpRequest()
     xhr1.open('GET','http://localhost:8080/api',true)
 
-    xhr1.onreadystatechange = function() {
+    xhr1.onreadystatechange = function(e) {e.preventDefault()
     if (this.readyState == 4 && this.status == 200) {
       const data = JSON.parse(this.responseText)
       setState({
@@ -22,12 +20,8 @@ export function Table() {
           ],
           data: data
         })
-    }
-  }
-
+    }}
     xhr1.send()
-
-
   }
 
   useEffect( () => {fetchData()},[] )
@@ -42,9 +36,13 @@ export function Table() {
             new Promise((resolve, reject) => {
               setTimeout(() => {
                 {
-                  const data = this.state.data;
-                  data.push(newData);
-                  this.setState({ data }, () => resolve());
+                  var newData1 = `name=${newData.name}&age=${newData.age}`
+                  var xhr = new XMLHttpRequest()
+                  xhr.open('POST','http://localhost:8080/api',true)
+                  xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
+                  xhr.send(newData1)
+                  {/* refresh list */}
+                  fetchData()
                 }
                 resolve()
               }, 1000)
@@ -68,9 +66,8 @@ export function Table() {
                   var xhr = new XMLHttpRequest()
                   xhr.open('DELETE','http://localhost:8080/api/'+ oldData._id,true)
                   xhr.send()
-
+                  {/* refresh list */}
                   fetchData()
-
                 }
                 resolve()
               }, 1000)

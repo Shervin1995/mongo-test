@@ -23,9 +23,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 export function Form() {
-  const classes = useStyles();
-
-  // function fn23(e){e.preventDefault(); location.reload() }
+  const classes = useStyles()
 
   return (
     <form id='insertform' className={classes.container} noValidate autoComplete="off">
