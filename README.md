@@ -1,5 +1,7 @@
 # clean code
-98.11.24
+98.11.24 
+
+singleProduct and index come in one page 
 
 ```
 mongo
