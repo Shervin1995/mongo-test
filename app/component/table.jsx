@@ -6,18 +6,31 @@ import Button from '@material-ui/core/Button'
 export function Table() {
   const [state, setState] = useState({ })
 
-   function fetchData() {
-    fetch("/api").then(x => x.json()).then(data => setState({
-      columns: [
-        { title: 'id', field: '_id', cellStyle: {display: 'none'},headerStyle: {display: 'none'}},
-        { title: 'Age', field: 'age', type: 'numeric' },
-        { title: 'Name', field: 'name'}
-      ],
-      data: data
-    }))
+  function fetchData() {
+
+    var xhr1 = new XMLHttpRequest()
+    xhr1.open('GET','http://localhost:8080/api',true)
+
+    xhr1.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      const data = JSON.parse(this.responseText)
+      setState({
+          columns: [
+            { title: 'id', field: '_id', cellStyle: {display: 'none'},headerStyle: {display: 'none'}},
+            { title: 'Age', field: 'age', type: 'numeric' },
+            { title: 'Name', field: 'name'}
+          ],
+          data: data
+        })
+    }
   }
 
-    useEffect( () => {fetchData()},[] )
+    xhr1.send()
+
+
+  }
+
+  useEffect( () => {fetchData()},[] )
 
   return (
     <MaterialTable
@@ -55,12 +68,8 @@ export function Table() {
                   var xhr = new XMLHttpRequest()
                   xhr.open('DELETE','http://localhost:8080/api/'+ oldData._id,true)
                   xhr.send()
-                  console.log(oldData._id)
 
-                  $('td').on('click',function(e){
-                    console.log(e.target.node)
-                  })
-
+                  fetchData()
 
                 }
                 resolve()
