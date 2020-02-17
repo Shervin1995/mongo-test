@@ -25,7 +25,6 @@ router.delete('/api/:id1',(req,res)=>{
       if (err){console.log(err)}
       })
     })
-})
 
 // insert
 router.post('/api',(req,res)=>{
@@ -35,7 +34,6 @@ router.post('/api',(req,res)=>{
 		if(err) return console.log(err)
     })
 	})
-})
 
 // update
 router.post('/api/update',(req,res)=>{
