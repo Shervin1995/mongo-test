@@ -25,23 +25,23 @@ const useStyles = makeStyles(theme => ({
 export function Form() {
   const classes = useStyles();
 
-  function fn23(){ location.reload() }
+  // function fn23(e){e.preventDefault(); location.reload() }
 
   return (
-    <form onSubmit={fn23} id='insertform' className={classes.container} noValidate autoComplete="off">
+    <form id='insertform' className={classes.container} noValidate autoComplete="off">
     <div>
       <TextField
-        id="tourPrice"
+        id="ageid"
         className={classes.textField}
-        label="Tour Price"
+        label="Age"
         margin="normal"
       />
     </div>
     <div>
       <TextField
-        id="tourDescription"
+        id="nameid"
         className={classes.textField}
-        label="Tour Description"
+        label="Name"
         margin="normal"
       />
     </div>

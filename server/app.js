@@ -1,15 +1,7 @@
 var express = require('express')
 var app = express()
 var bodyParser = require('body-parser')
-var ObjectID = require('mongodb').ObjectID
-var Numeral = require('numeral')
-var MongoClient = require('mongodb').MongoClient
 var path = require('path')
-var db
-MongoClient.connect('mongodb://localhost:27017/',
-  function(err,client){
-    db = client.db('learning_mongo')
-})
 
 
 app.use(bodyParser.json())

@@ -14,9 +14,6 @@ export class App extends Component{
           <h1>Show!</h1>
           <Table />
 
-        {/*   <div class='showlist'>
-
-          </div> */}
         </div>
   )}
 }

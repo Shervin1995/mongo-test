@@ -19,29 +19,23 @@ router.get( '/api' , function(req,res){
 // del
 router.delete('/api/:id1',(req,res)=>{
 	let id =  ObjectID(req.params.id1)
-	db.collection('tours').deleteOne(
+	db.collection('coll01').deleteOne(
 		{_id: id},
 		(err,result)=>{
       if (err){console.log(err)}
-      db.collection('tours').find().toArray(function(err,results){
+      db.collection('coll01').find().toArray(function(err,results){
         res.json(results)
       })
-      // now ajax works instead redirect
-    }
-	)
+    })
 })
 
 // insert
 router.post('/api',(req,res)=>{
-	db.collection('tours').insertOne(
-		// perhaps bodyParser helps to read req.body
+	db.collection('coll01').insertOne(
 		req.body,
-    // you can use this instead:
-		// {tourDescription: req.body.tourDescription1, tourPrice: req.body.tourPrice1},
 		(err,result)=>{
 		if(err) return console.log(err)
-		// console.log('saved to db!!')
-    db.collection('tours').find().toArray(function(err,results){
+    db.collection('coll01').find().toArray(function(err,results){
       res.json(results)
     })
 	})
