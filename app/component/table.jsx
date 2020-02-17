@@ -51,11 +51,11 @@ export function Table() {
             new Promise((resolve, reject) => {
               setTimeout(() => {
                 {
-                  var newData1 = `name=${newData.name}&age=${newData.age}`
+                  var newData2 = `_id=${newData._id}&name=${newData.name}&age=${newData.age}`
                   var xhr = new XMLHttpRequest()
-                  xhr.open('POST','http://localhost:8080/api',true)
+                  xhr.open('POST','http://localhost:8080/api/update',true)
                   xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
-                  xhr.send(newData1)
+                  xhr.send(newData2)
                   {/* refresh list */}
                   fetchData()
                 }

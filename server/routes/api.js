@@ -23,8 +23,6 @@ router.delete('/api/:id1',(req,res)=>{
 		{_id: id},
 		(err,result)=>{
       if (err){console.log(err)}
-      db.collection('coll01').find().toArray(function(err,results){
-        res.json(results)
       })
     })
 })
@@ -35,8 +33,16 @@ router.post('/api',(req,res)=>{
 		req.body,
 		(err,result)=>{
 		if(err) return console.log(err)
-    db.collection('coll01').find().toArray(function(err,results){
-      res.json(results)
+    })
+	})
+})
+
+// update
+router.post('/api/:id2',(req,res)=>{
+	db.collection('coll01').updateOne(
+		req.body,
+		(err,result)=>{
+		if(err) return console.log(err)
     })
 	})
 })
