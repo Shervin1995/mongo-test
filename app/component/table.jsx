@@ -51,10 +51,13 @@ export function Table() {
             new Promise((resolve, reject) => {
               setTimeout(() => {
                 {
-                  const data = this.state.data;
-                  const index = data.indexOf(oldData);
-                  data[index] = newData;
-                  this.setState({ data }, () => resolve());
+                  var newData1 = `name=${newData.name}&age=${newData.age}`
+                  var xhr = new XMLHttpRequest()
+                  xhr.open('POST','http://localhost:8080/api',true)
+                  xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
+                  xhr.send(newData1)
+                  {/* refresh list */}
+                  fetchData()
                 }
                 resolve()
               }, 1000)
