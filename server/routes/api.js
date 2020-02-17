@@ -38,14 +38,14 @@ router.post('/api',(req,res)=>{
 })
 
 // update
-router.post('/api/:id2',(req,res)=>{
-	db.collection('coll01').updateOne(
-		req.body,
-		(err,result)=>{
-		if(err) return console.log(err)
-    })
+router.post('/api/update',(req,res)=>{
+  let id =  ObjectID(req.body._id)
+  db.collection('coll01').updateOne(
+    {_id: id},
+    {$set: {name: req.body.name, age: req.body.age} },
+    (err,result)=>{if(err) return console.log(err)}
+  )
 	})
-})
 
 
 
