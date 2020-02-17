@@ -1,7 +1,7 @@
 # My 1st muiTable :)
-98.11.29 tiny Project
+98.11.29   tiny Project
 
-[Watch Video!](...)
+[Watch final video!](https://archive.org/details/my1stmuiTable)
 
 ## it can ...
 it's a CRUD (Restful API) small app. it can Get, insert, update and delete data!
