@@ -34,3 +34,28 @@ enjoy!
 /* css comment */
 {/* jsx comment here */}
 ```
+
+## clean form field
+
+after ajax, fields still have the values
+clean it by reload browser
+```
+location.reload()
+```
+i remember ...
+```
+window.open()
+window.open('http://google.com')
+window.open('http://localhost:8080/api')
+window.on('load',fn())
+```
+dont know is true or not!
+
+
+
+
+
+
+
+
+
